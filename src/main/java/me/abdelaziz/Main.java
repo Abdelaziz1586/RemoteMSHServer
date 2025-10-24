@@ -88,7 +88,7 @@ public final class Main {
                     }
 
                     final String ip = exchange.getSourceAddress().getAddress().getHostAddress();
-                    if (!WHITELIST.isEmpty() && !WHITELIST.contains(ip)) {
+                    if (!WHITELIST.contains(ip)) {
                         System.out.printf("[%s] %s BLOCKED%n", LocalDateTime.now().format(FORMATTER), ip);
                         exchange.setStatusCode(403).endExchange();
                         return;
